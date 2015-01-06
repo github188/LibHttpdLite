@@ -23,6 +23,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>
+#include <stdlib.h>
 
 #ifdef _WIN32
 #  include <getopt.h>
