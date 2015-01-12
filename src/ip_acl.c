@@ -24,10 +24,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#if defined(_WIN32)
-#else
+#include <sys/types.h>
 #include <unistd.h>
-#endif
 
 #include "httpd.h"
 #include "httpd_priv.h"
@@ -42,10 +40,7 @@
 ** PRIVATE ROUTINES
 **************************************************************************/
 
-static int scanCidr(val, result, length)
-	char	*val;
-	u_int	*result,
-		*length;
+static int scanCidr(char *val, u_int *result, u_int *length)
 {
 	u_int	res, res1, res2, res3, res4, res5;
 	char	*cp;
